@@ -12,6 +12,7 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    
 
     @IBOutlet weak var facil: UIButton!
     
@@ -19,7 +20,11 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var passarinho: UIImageView!
     
- 
+    let padrao = UserDefaults.standard
+    
+    var velocidade: CGFloat = 10
+
+    var chave = "chave"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +51,9 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
             
         }
+    
+        padrao.set(velocidade, forKey: chave)
+        
         facil.isHidden = true
         dificil.isHidden = true
         passarinho.isHidden = true

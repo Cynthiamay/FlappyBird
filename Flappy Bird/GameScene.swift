@@ -11,6 +11,7 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    
     //essentially just a sprite or character that we gonna animate and move around our screen
     var bird = SKSpriteNode()
     var bg = SKSpriteNode()
@@ -18,7 +19,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = 0
     var fraseDeGameOver = SKLabelNode()
     var timer = Timer()
+    let padrao = UserDefaults.standard
+    let chave = "chave"
     
+    let vc = GameViewController()
     //MARK: - Definindo o colisor com enum
     enum Colisor: UInt32{
         
@@ -135,15 +139,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-            
+        
         self.physicsWorld.contactDelegate = self
-        
-        configuracoesDoJogo()
-        
-        }
+        let velo = CGFloat(padrao.integer(forKey: chave))
+        print("\(velo)")
+        configuracoesDoJogo(velocidade: velo)
+    }
     
     
-        func configuracoesDoJogo() {
+    func configuracoesDoJogo(velocidade: CGFloat) {
+        
+        self.speed = velocidade
             //Faz a repeticao dos tubos aparecendo na tela a cada 3 segundos
             timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.criarTubos), userInfo: nil, repeats: true)
                    
@@ -274,7 +280,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             self.speed = 1
             self.removeAllChildren()
-            configuracoesDoJogo()
+            configuracoesDoJogo(velocidade: 1)
             
         }
 
