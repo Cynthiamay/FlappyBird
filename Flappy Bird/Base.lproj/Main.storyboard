@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,56 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Flappy_Bird" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oie_gcfkTNYWu17d" translatesAutoresizingMaskIntoConstraints="NO" id="N49-V6-OpZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqi-hR-633">
+                                <rect key="frame" x="191" y="285" width="32" height="30"/>
+                                <state key="normal" title="Facil"/>
+                                <connections>
+                                    <action selector="botaoFacil:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Iad-Rz-2Ss"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wif-SW-HCy">
+                                <rect key="frame" x="185" y="394" width="38" height="30"/>
+                                <state key="normal" title="Dificil"/>
+                                <connections>
+                                    <action selector="botaoDificil:" destination="BV1-FR-VrT" eventType="touchUpInside" id="8YI-E3-Ccb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Wif-SW-HCy" secondAttribute="bottom" constant="438" id="5Gy-HJ-iEY"/>
+                            <constraint firstItem="Wif-SW-HCy" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="185" id="8dB-Ln-MKh"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Wif-SW-HCy" secondAttribute="trailing" constant="191" id="Gqg-1R-RKQ"/>
+                            <constraint firstItem="Mqi-hR-633" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="191" id="Kti-lS-sYo"/>
+                            <constraint firstItem="Mqi-hR-633" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="241" id="LVw-J4-C0L"/>
+                            <constraint firstItem="Wif-SW-HCy" firstAttribute="top" secondItem="Mqi-hR-633" secondAttribute="bottom" constant="79" id="Xwx-Qd-vIB"/>
+                            <constraint firstItem="Wif-SW-HCy" firstAttribute="top" secondItem="Mqi-hR-633" secondAttribute="bottom" constant="79" id="Yec-Ue-NWq"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Mqi-hR-633" secondAttribute="trailing" constant="191" id="dkg-gt-gcK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <connections>
+                        <outlet property="dificil" destination="Wif-SW-HCy" id="Tkh-U7-eEb"/>
+                        <outlet property="facil" destination="Mqi-hR-633" id="Lfe-0h-HYm"/>
+                        <outlet property="passarinho" destination="N49-V6-OpZ" id="iz8-0V-yUa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="oie_gcfkTNYWu17d" width="600" height="509"/>
+    </resources>
 </document>
