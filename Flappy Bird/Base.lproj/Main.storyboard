@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,21 +15,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oie_gcfkTNYWu17d" translatesAutoresizingMaskIntoConstraints="NO" id="N49-V6-OpZ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="funny-owl-cartoon-background-vector-5025411" translatesAutoresizingMaskIntoConstraints="NO" id="p43-OC-g8m" userLabel="passarinho">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqi-hR-633">
-                                <rect key="frame" x="191" y="285" width="32" height="30"/>
-                                <state key="normal" title="Facil"/>
+                                <rect key="frame" x="89" y="430" width="235" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="A5A-rt-Vp6"/>
+                                    <constraint firstAttribute="width" constant="235" id="Lfe-4j-nqr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Fácil" backgroundImage="buttons_PNG140">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="botaoFacil:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Iad-Rz-2Ss"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wif-SW-HCy">
-                                <rect key="frame" x="185" y="394" width="38" height="30"/>
-                                <state key="normal" title="Dificil"/>
+                                <rect key="frame" x="89.5" y="529" width="235" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="hiW-Cv-Pyv"/>
+                                    <constraint firstAttribute="width" constant="235" id="nH0-DN-Rpl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Dificil" backgroundImage="buttons_PNG139">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="botaoDificil:" destination="BV1-FR-VrT" eventType="touchUpInside" id="8YI-E3-Ccb"/>
                                 </connections>
@@ -37,21 +50,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Wif-SW-HCy" secondAttribute="bottom" constant="438" id="5Gy-HJ-iEY"/>
-                            <constraint firstItem="Wif-SW-HCy" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="185" id="8dB-Ln-MKh"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Wif-SW-HCy" secondAttribute="trailing" constant="191" id="Gqg-1R-RKQ"/>
-                            <constraint firstItem="Mqi-hR-633" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="191" id="Kti-lS-sYo"/>
-                            <constraint firstItem="Mqi-hR-633" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="241" id="LVw-J4-C0L"/>
-                            <constraint firstItem="Wif-SW-HCy" firstAttribute="top" secondItem="Mqi-hR-633" secondAttribute="bottom" constant="79" id="Xwx-Qd-vIB"/>
-                            <constraint firstItem="Wif-SW-HCy" firstAttribute="top" secondItem="Mqi-hR-633" secondAttribute="bottom" constant="79" id="Yec-Ue-NWq"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Mqi-hR-633" secondAttribute="trailing" constant="191" id="dkg-gt-gcK"/>
+                            <constraint firstItem="Wif-SW-HCy" firstAttribute="top" secondItem="Mqi-hR-633" secondAttribute="bottom" constant="21" id="2fU-h7-pij"/>
+                            <constraint firstItem="Mqi-hR-633" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="Go4-1b-duV"/>
+                            <constraint firstItem="Mqi-hR-633" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="386" id="HVJ-tj-lp0"/>
+                            <constraint firstItem="Mqi-hR-633" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="89" id="JP2-pQ-qNy"/>
+                            <constraint firstItem="Wif-SW-HCy" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="kGS-bF-ywU"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Mqi-hR-633" secondAttribute="trailing" constant="90" id="lg7-SB-nbn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
                         <outlet property="dificil" destination="Wif-SW-HCy" id="Tkh-U7-eEb"/>
                         <outlet property="facil" destination="Mqi-hR-633" id="Lfe-0h-HYm"/>
-                        <outlet property="passarinho" destination="N49-V6-OpZ" id="iz8-0V-yUa"/>
+                        <outlet property="passarinho" destination="p43-OC-g8m" id="wmE-Qe-gLd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -60,6 +71,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="oie_gcfkTNYWu17d" width="600" height="509"/>
+        <image name="buttons_PNG139" width="960" height="480"/>
+        <image name="buttons_PNG140" width="800" height="270"/>
+        <image name="funny-owl-cartoon-background-vector-5025411" width="948" height="1000"/>
     </resources>
 </document>

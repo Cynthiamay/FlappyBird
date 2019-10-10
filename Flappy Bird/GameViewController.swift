@@ -12,7 +12,9 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    let defaults = UserDefaults.standard
     
+    var velocidadeGlobal: CGFloat?
 
     @IBOutlet weak var facil: UIButton!
     
@@ -20,11 +22,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var passarinho: UIImageView!
     
-    let padrao = UserDefaults.standard
-    
-    var velocidade: CGFloat = 10
 
-    var chave = "chave"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +32,8 @@ class GameViewController: UIViewController {
     
     @IBAction func botaoFacil(_ sender: Any) {
     
+        configuracaoDaVelocidade(velocidade: 1)
+
         
         if let view = self.view as! SKView? {
             
@@ -51,17 +51,18 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
             
         }
-    
-        padrao.set(velocidade, forKey: chave)
-        
-        facil.isHidden = true
-        dificil.isHidden = true
-        passarinho.isHidden = true
+   
     }
     
     @IBAction func botaoDificil(_ sender: Any) {
         print("Work!")
+        
+        configuracaoDaVelocidade(velocidade: 3)
+
+        
         if let view = self.view as! SKView? {
+            
+            
             
             if let scene = SKScene(fileNamed: "GameScene") {
                 
@@ -78,11 +79,22 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
             
+            
         }
+        
+    }
+    func configuracaoDaVelocidade(velocidade:CGFloat)  {
+        
+        velocidadeGlobal = velocidade
+        
+        defaults.set(velocidadeGlobal, forKey: "chave")
+        
         facil.isHidden = true
         dificil.isHidden = true
         passarinho.isHidden = true
+        
     }
+
     
 
     override var shouldAutorotate: Bool {
